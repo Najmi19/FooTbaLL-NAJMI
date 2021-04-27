@@ -5,9 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.football_najmi.R
@@ -37,16 +34,16 @@ class ClubListFragment : Fragment() {
             layoutManager = this@ClubListFragment.layoutManager
             adapter = this@ClubListFragment.adapter
         }
-        val clubList : ArrayList<String> = arrayListOf<String>().apply {
-            add("Madrid")
-            add("Barça")
-            add("Paris")
-            add("Marseiile")
-            add("Bayern")
-            add("Dortmund")
-            add("IRT")
-            add("widad")
-            
+        val clubList : ArrayList<Club> = arrayListOf<Club>().apply {
+            add(Club("Madrid"))
+            add(Club("Barça"))
+            add(Club("Paris"))
+            add(Club("Marseiile"))
+            add(Club("Bayern"))
+            add(Club("Dortmund"))
+            add(Club("IRT"))
+            add(Club("widad"))
+
         }
         adapter.updateList(clubList)
     }

@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.football_najmi.R
 
-class ClubAdapter(private var dataSet: List<String>) :
+class ClubAdapter(private var dataSet: List<Club>) :
     RecyclerView.Adapter<ClubAdapter.ViewHolder>() {
 
     /**
@@ -24,7 +24,7 @@ class ClubAdapter(private var dataSet: List<String>) :
 
     }
 
-    fun updateList(list: List<String>){
+    fun updateList(list: List<Club>){
         dataSet = list
         notifyDataSetChanged()
 
@@ -45,7 +45,10 @@ class ClubAdapter(private var dataSet: List<String>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.textView.text = dataSet[position]
+        val club = dataSet[position]
+        viewHolder.textView.text = club.name
+
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
